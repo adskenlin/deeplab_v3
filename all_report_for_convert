@@ -1,0 +1,271 @@
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile network.py --outfile network_upgraded.py
+ERROR line 2:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 20:9: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 21:27: Added keywords to args of function 'tf.shape'
+INFO line 24:31: Added keywords to args of function 'tf.reduce_mean'
+INFO line 27:31: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+INFO line 61:13: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 71:19: Added keywords to args of function 'tf.shape'
+INFO line 74:18: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: network.py
+--------------------------------------------------------------------------------
+network.py:2:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile test.py --outfile test_upgraded.py
+ERROR line 6:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+WARNING line 81:11: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+INFO line 91:21: Renamed 'tf.nn.softmax_cross_entropy_with_logits_v2' to 'tf.nn.softmax_cross_entropy_with_logits'
+INFO line 94:24: Added keywords to args of function 'tf.reduce_mean'
+INFO line 95:0: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 95:0: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+INFO line 97:17: Added keywords to args of function 'tf.argmax'
+INFO line 100:20: tf.summary.merge_all requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 100:20: Renamed 'tf.summary.merge_all' to 'tf.compat.v1.summary.merge_all'
+INFO line 101:8: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+INFO line 106:5: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+INFO line 109:13: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+INFO line 110:13: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 2 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: test.py
+--------------------------------------------------------------------------------
+test.py:6:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+test.py:81:11: WARNING: Changing dataset.make_one_shot_iterator() to tf.compat.v1.data.make_one_shot_iterator(dataset). Please check this transformation.
+
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile train.py --outfile train_upgraded.py
+ERROR line 5:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 91:9: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+INFO line 93:11: Renamed 'tf.data.Iterator' to 'tf.compat.v1.data.Iterator'
+WARNING line 99:20: Changing dataset.make_initializable_iterator() to tf.compat.v1.data.make_initializable_iterator(dataset). Please check this transformation.
+
+WARNING line 100:22: Changing dataset.make_initializable_iterator() to tf.compat.v1.data.make_initializable_iterator(dataset). Please check this transformation.
+
+INFO line 105:17: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+INFO line 107:12: Added keywords to args of function 'tf.cond'
+INFO line 116:18: Renamed 'tf.nn.softmax_cross_entropy_with_logits_v2' to 'tf.nn.softmax_cross_entropy_with_logits'
+INFO line 118:19: Added keywords to args of function 'tf.reduce_mean'
+INFO line 119:17: Added keywords to args of function 'tf.argmax'
+INFO line 121:0: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 121:0: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+INFO line 125:5: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 127:16: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+INFO line 132:20: tf.summary.merge_all requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 132:20: Renamed 'tf.summary.merge_all' to 'tf.compat.v1.summary.merge_all'
+ERROR line 143:18: Using member tf.contrib.metrics.streaming_mean_iou in deprecated module tf.contrib. tf.contrib.metrics.streaming_mean_iou cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 143:56: Added keywords to args of function 'tf.argmax'
+INFO line 144:56: Added keywords to args of function 'tf.argmax'
+INFO line 146:0: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 146:0: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+INFO line 149:11: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+INFO line 151:8: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+INFO line 155:5: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+INFO line 158:19: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 158:19: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+INFO line 159:18: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 159:18: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+INFO line 162:13: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+INFO line 163:13: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+WARNING line 222:24: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 5 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: train.py
+--------------------------------------------------------------------------------
+train.py:5:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+train.py:99:20: WARNING: Changing dataset.make_initializable_iterator() to tf.compat.v1.data.make_initializable_iterator(dataset). Please check this transformation.
+
+train.py:100:22: WARNING: Changing dataset.make_initializable_iterator() to tf.compat.v1.data.make_initializable_iterator(dataset). Please check this transformation.
+
+train.py:143:18: ERROR: Using member tf.contrib.metrics.streaming_mean_iou in deprecated module tf.contrib. tf.contrib.metrics.streaming_mean_iou cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+train.py:222:24: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile preprocessing/inception_preprocessing.py --outfile preprocessing/inception_preprocessing_upgraded.py
+INFO line 38:8: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+INFO line 63:7: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+INFO line 63:7: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+INFO line 130:7: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+INFO line 130:7: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+INFO line 141:36: Added keywords to args of function 'tf.image.sample_distorted_bounding_box'
+INFO line 142:8: Added keywords to args of function 'tf.shape'
+INFO line 186:7: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+INFO line 186:7: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+INFO line 198:6: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 198:6: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+INFO line 207:6: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 207:6: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+INFO line 219:26: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+INFO line 223:6: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 223:6: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+INFO line 236:6: tf.summary.image requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+INFO line 236:6: Renamed 'tf.summary.image' to 'tf.compat.v1.summary.image'
+INFO line 265:7: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+INFO line 265:7: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+WARNING line 276:14: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+INFO line 276:14: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: preprocessing/inception_preprocessing.py
+--------------------------------------------------------------------------------
+preprocessing/inception_preprocessing.py:276:14: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+
+
+Make sure to read the detailed log 'report.txt'
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile preprocessing/read_data.py --outfile preprocessing/read_data_upgraded.py
+INFO line 28:21: Added keywords to args of function 'tf.shape'
+INFO line 30:24: Added keywords to args of function 'tf.cond'
+INFO line 36:17: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+INFO line 53:18: Added keywords to args of function 'tf.shape'
+INFO line 54:24: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+INFO line 56:12: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+INFO line 60:25: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+INFO line 62:12: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+INFO line 66:17: Renamed 'tf.image.resize_images' to 'tf.image.resize'
+INFO line 98:19: Renamed 'tf.image.resize_image_with_crop_or_pad' to 'tf.image.resize_with_crop_or_pad'
+INFO line 105:32: Renamed 'tf.image.resize_image_with_crop_or_pad' to 'tf.image.resize_with_crop_or_pad'
+INFO line 108:37: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+INFO line 115:21: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+INFO line 116:26: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+INFO line 117:18: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+INFO line 118:17: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+INFO line 121:15: Added keywords to args of function 'tf.parse_single_example'
+INFO line 121:15: Renamed 'tf.parse_single_example' to 'tf.io.parse_single_example'
+INFO line 123:12: Renamed 'tf.decode_raw' to 'tf.io.decode_raw'
+INFO line 124:17: Renamed 'tf.decode_raw' to 'tf.io.decode_raw'
+INFO line 132:17: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+INFO line 134:11: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+INFO line 157:31: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile preprocessing/training.py --outfile preprocessing/training_upgraded.py
+ERROR line 3:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 47:30: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+INFO line 123:27: Renamed 'tf.where' to 'tf.compat.v1.where'
+INFO line 125:11: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: preprocessing/training.py
+--------------------------------------------------------------------------------
+preprocessing/training.py:3:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile resnet/resnet_utils.py --outfile resnet/resnet_utils_upgraded.py
+ERROR line 43:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 119:13: Added keywords to args of function 'tf.pad'
+INFO line 175:9: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 180:13: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 241:26: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+INFO line 242:26: Changing tf.contrib.layers.variance_scaling_initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: resnet/resnet_utils.py
+--------------------------------------------------------------------------------
+resnet/resnet_utils.py:43:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile resnet/resnet_v2.py --outfile resnet/resnet_v2_upgraded.py
+ERROR line 57:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 86:9: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 184:9: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+INFO line 214:22: Added keywords to args of function 'tf.reduce_mean'
+INFO line 214:22: Renamed keyword argument for tf.reduce_mean from keep_dims to keepdims
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: resnet/resnet_v2.py
+--------------------------------------------------------------------------------
+resnet/resnet_v2.py:57:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+
+
+Make sure to read the detailed log 'report.txt'
+
+(venv_deeplab) kenlin (master *+) deeplab_v3 $ tf_upgrade_v2 --infile serving/deeplab_saved_model.py --outfile serving/deeplab_save_model_upgraded.py
+ERROR line 7:7: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+INFO line 43:9: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+INFO line 45:30: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+INFO line 46:29: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+INFO line 49:32: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+INFO line 50:32: Renamed 'tf.FixedLenFeature' to 'tf.io.FixedLenFeature'
+INFO line 51:21: Added keywords to args of function 'tf.parse_example'
+INFO line 51:21: Renamed 'tf.parse_example' to 'tf.io.parse_example'
+INFO line 61:25: Added keywords to args of function 'tf.argmax'
+INFO line 66:16: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+INFO line 79:18: Renamed 'tf.saved_model.builder.SavedModelBuilder' to 'tf.compat.v1.saved_model.builder.SavedModelBuilder'
+INFO line 82:28: Renamed 'tf.saved_model.utils.build_tensor_info' to 'tf.compat.v1.saved_model.utils.build_tensor_info'
+INFO line 83:29: Renamed 'tf.saved_model.utils.build_tensor_info' to 'tf.compat.v1.saved_model.utils.build_tensor_info'
+INFO line 84:28: Renamed 'tf.saved_model.utils.build_tensor_info' to 'tf.compat.v1.saved_model.utils.build_tensor_info'
+INFO line 87:29: Renamed 'tf.saved_model.utils.build_tensor_info' to 'tf.compat.v1.saved_model.utils.build_tensor_info'
+INFO line 92:12: Renamed 'tf.saved_model.signature_def_utils.build_signature_def' to 'tf.compat.v1.saved_model.signature_def_utils.build_signature_def'
+INFO line 95:28: Renamed 'tf.saved_model.signature_constants.PREDICT_METHOD_NAME' to 'tf.saved_model.PREDICT_METHOD_NAME'
+INFO line 98:19: Renamed 'tf.saved_model.tag_constants.SERVING' to 'tf.saved_model.SERVING'
+WARNING line 105:8: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+INFO line 109:4: Renamed 'tf.app.run' to 'tf.compat.v1.app.run'
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 2 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: serving/deeplab_saved_model.py
+--------------------------------------------------------------------------------
+serving/deeplab_saved_model.py:7:7: ERROR: Using member tf.contrib.slim in deprecated module tf.contrib. tf.contrib.slim cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+serving/deeplab_saved_model.py:105:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+
+
+Make sure to read the detailed log 'report.txt'
+
